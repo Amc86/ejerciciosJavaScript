@@ -7,14 +7,21 @@
 
 const numbersList = [];
 
-function sum(){
-
+function sum(a, b){
+    return a + b;
 }
 
-function substract(){
-
+function substract(a, b){
+    return a - b;
 }
 
-function father(){
-
+function father(a, b, callback){
+    const resultado = callback(a, b);
+    numbersList.push(resultado);
 }
+
+father(5, 2, sum);
+father(2, 1, substract);
+father(7, 8, sum);
+
+console.log(numbersList);
